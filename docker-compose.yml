@@ -1,0 +1,20 @@
+version: '3.5'
+
+services:
+  postgres:
+    container_name: spring-boot-postgres
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: dbpassword
+      POSTGRES_DB: docker
+    ports:
+      - "5432:5432"
+
+  springboot:
+    image: wonwoo/spring-boot-docker-postgresql
+    container_name: spring-boot-docker-postgresql
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+

@@ -1,0 +1,10 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  datasource:
+    url: jdbc:postgresql://postgres:5432/docker
+    username: postgres
+    password: dbpassword
+    driver-class-name: org.postgresql.Driver
