@@ -3,7 +3,7 @@
 Spring boot docker postgresql Sample
 
 ```
-$ git clone https://github.com/wonwoo/spring-boot-docker-postgresql.git
+$ git clone https://github.com/kiranpayyavuala/springbootpostgres.git
 $ cd spring-boot-docker-postgresql
 $ mvn clean package docker:build
 ```
