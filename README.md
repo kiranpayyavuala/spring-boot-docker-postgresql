@@ -3,7 +3,7 @@
 
 
 git clone https://github.com/kiranpayyavuala/springbootpostgres.git
-
+-------------------------------------------------------------------
 cd spring-boot-docker-postgresql
 
 
@@ -33,7 +33,7 @@ GRANT ALL PRIVILEGES ON DATABASE postgres to postgres;
 #spring boot link postgresql run
 --------------------------------
 
-docker run --name spring-boot-docker-postgresql --link spring-boot-postgres:postgres -p 8080:8080 -d wonwoo/spring-boot-docker-postgresql
+docker run --name spring-boot-docker-postgresql --link spring-boot-postgres:postgres -p 8080:8080 -d my/spring-boot-docker-postgresql
 
 #spring boot log
 ----------------
