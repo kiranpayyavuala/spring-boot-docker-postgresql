@@ -20,7 +20,8 @@ docker exec -it spring-boot-postgres /bin/bash
 
 su postgres
 
-for database creation if already created set the pssword
+for database database. if already created then set the pssword
+
 CREATE USER postgres WITH PASSWORD 'dbpassword';
 
 ALTER USER postgres WITH PASSWORD 'dbpassword';
