@@ -1,25 +1,46 @@
-# spring-boot-docker-postgresql
-
-Spring boot docker postgresql Sample
+#Spring boot docker postgresql Sample
+-------------------------------------
 
 
 git clone https://github.com/kiranpayyavuala/springbootpostgres.git
+
 cd spring-boot-docker-postgresql
-mvn clean package docker:build
 
-postgresql pull 
 
-$ docker run --name spring-boot-postgres -e POSTGRES_PASSWORD=dbpassword -e POSTGRES_DB=docker -d postgres
+mvn clean install -Dmaven.test.skip=true docker:build
 
-spring boot link postgresql run
+#postgresql pull 
+----------------
+
+docker run --name spring-boot-postgres -e POSTGRES_PASSWORD=dbpassword -e POSTGRES_DB=docker -d postgres
+
+
+#now we opening the postgres container and login into postgres user and we create the password to postgres database(according to our application.yml)
+
+docker exec -it spring-boot-postgres /bin/bash
+
+su postgres
+
+for database creation if already created set the pssword
+CREATE USER postgres WITH PASSWORD 'dbpassword';
+
+ALTER USER postgres WITH PASSWORD 'dbpassword';
+
+GRANT ALL PRIVILEGES ON DATABASE postgres to postgres;
+
+\q
+
+#spring boot link postgresql run
+--------------------------------
 
 docker run --name spring-boot-docker-postgresql --link spring-boot-postgres:postgres -p 8080:8080 -d wonwoo/spring-boot-docker-postgresql
 
-spring boot log
+#spring boot log
+----------------
 
 docker logs $CONTAINER_ID 
 
 
-test
-[http://localhost:8080/accounts](http://localhost:8080/accounts)
-
+#test
+-----
+[http://ouripaddress:8080/accounts]
